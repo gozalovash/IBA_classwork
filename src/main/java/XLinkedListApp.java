@@ -11,6 +11,8 @@ public class XLinkedListApp {
         System.out.println(xl.toString());
         xl.delete(2);
         System.out.println(xl.toString());
+        xl.revert();
+        System.out.println(xl.toString());
 
         /*boolean found11 = xl.contains(11);
         boolean found33 = xl.contains(33);

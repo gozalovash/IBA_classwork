@@ -70,15 +70,16 @@ public class XLinkedList {
         if(head==null)
             return;
         XItem left=head;
-        XItem right=null;
-        XItem temp=head;
+        XItem right=head;
         int count=0;
-        while(temp!=null){
+        while(right.next!=null){
             count+=1;
-            temp=temp.next;
+            right=right.next;
         }
-        for(int i=0; i<count/2+1; i++){
-
+        for(int i=0; i<count/2; i++){
+            int temp=left.value;
+            left.value=right.value;
+            right.value=temp;
         }
     }
 
