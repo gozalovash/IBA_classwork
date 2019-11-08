@@ -7,11 +7,11 @@ public class XLinkedListApp {
         xl.add(77);
         xl.add(89);
         System.out.println(xl.toString());
-        xl.remove(11);
-        System.out.println(xl.toString());
-        xl.delete(2);
-        System.out.println(xl.toString());
+        //xl.remove(11);
+        //xl.delete(2);
+        //System.out.println(xl.toString());
         xl.revert();
+        System.out.println(xl.length());
         System.out.println(xl.toString());
 
         /*boolean found11 = xl.contains(11);

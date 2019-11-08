@@ -13,6 +13,10 @@ public class XLinkedList {
 
     private XItem head;
 
+    public XItem getHead() {
+        return head;
+    }
+
     public void add(int value) {
         XItem item = new XItem(value);
         if (head == null) {
@@ -48,7 +52,6 @@ public class XLinkedList {
                 return;
             current=current.next;
         }
-        XItem item =current.next;
         current.next=current.next.next;
     }
     public void remove(int value){
@@ -69,21 +72,50 @@ public class XLinkedList {
     public void revert(){
         if(head==null)
             return;
-        XItem left=head;
-        XItem right=head;
+
+        XItem left=null;
+        XItem current=head;
+        XItem right=null;
+
+        while(current!=null){
+            right=current.next;//next=current.next
+            current.next=left;//current.next=prev
+            left=current;//prev=current
+            current=right;//current=next
+        }
+        head=left;
+    }
+
+    public int lengthPrimitive(){
         int count=0;
-        while(right.next!=null){
-            count+=1;
-            right=right.next;
+        XItem current=head;
+        while(current!=null){
+            count++;
+            current=current.next;
         }
-        for(int i=0; i<count/2; i++){
-            int temp=left.value;
-            left.value=right.value;
-            right.value=temp;
-        }
+        return count;
     }
 
 
+    public int recursive_length(XItem curr){
+        if(curr==null)
+            return 0;
+        return recursive_length(curr.next)+1;
+    }
+    public int length(){
+        return recursive_length(head);
+    }
+
+
+    public int length_rec2(XItem curr, int c){
+        if(curr==null)
+            return c;
+        return length_rec2(curr, c+1);
+    }
+
+    public int length2(){
+        return length_rec2(head, 0);
+    }
     public String toString() {
         StringJoiner sj = new StringJoiner(",");
         XItem current=head;
