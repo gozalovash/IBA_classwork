@@ -1,3 +1,5 @@
+package homework.HappyFamily;
+
 public class Human {
     String name;
     String surname;
@@ -66,7 +68,7 @@ public class Human {
 
     @Override
     public String toString() {
-        return ("Human-"+" name-"+this.name +" surname-"+this.surname+" year-"+this.year+" iq-"+this.iq+
+        return ("homework.HappyFamily.Human-"+" name-"+this.name +" surname-"+this.surname+" year-"+this.year+" iq-"+this.iq+
                 " mother"+this.mother+" father"+this.father+" pet-"+this.pet);
 
     }

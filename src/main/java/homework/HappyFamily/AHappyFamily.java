@@ -1,3 +1,5 @@
+package homework.HappyFamily;
+
 public class AHappyFamily {
     public static void main(String[] args) {
         Pet dog=new Pet("dog","Stass",3, 50,new String[]{"eat","sleep"});

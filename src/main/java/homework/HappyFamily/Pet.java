@@ -1,3 +1,5 @@
+package homework.HappyFamily;
+
 public class Pet {
     String species;
     String nickname;
