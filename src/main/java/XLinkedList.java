@@ -85,6 +85,18 @@ public class XLinkedList {
         }
         head=left;
     }
+     void revert_r(){
+        revert_recursive(head, null);
+    }
+    void revert_recursive(XItem current, XItem previous){
+        if(current==null){
+            return;
+        }
+        previous=current;
+        current=current.next;
+
+    }
+
 
     public int lengthPrimitive(){
         int count=0;

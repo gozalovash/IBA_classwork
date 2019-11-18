@@ -1,3 +1,5 @@
+package warmups;
+
 public class ChangeTheCase {
     String invert(String origin){
         byte[]  bytes=origin.getBytes();
